@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  config.flake.factory.user = username: isAdmin: extraConfig: {
+  flake.factory.user = username: isAdmin: extraConfig: {
     nixos.${username} = lib.mkMerge [
       {
         users.users.${username} = {
@@ -12,5 +12,4 @@
       extraConfig
     ];
   };
-
 }

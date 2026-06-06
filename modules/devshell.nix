@@ -16,7 +16,7 @@
 
         packages = with pkgs; [
           inputs'.nixos-cli.packages.default
-          
+
           just
           just-lsp
           stow

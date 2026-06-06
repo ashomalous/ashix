@@ -1,7 +1,5 @@
 {
-  flake.modules.nixos.dank-material-shell =
-    { pkgs, ... }:
-    {
-      programs.dms-shell.enable = true;
-    };
+  flake.modules.nixos.dank-material-shell = _: {
+    programs.dms-shell.enable = true;
+  };
 }

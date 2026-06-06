@@ -1,17 +1,17 @@
 default:
     @just --list
 
+apply *flags:
+    nixos apply . {{flags}}
+
 # create a new bootable generation and switch into it
-switch: 
-    nixos apply
+switch: (apply)
 
 # test a generation without creating a bootable generation for it
-test: 
-    nixos apply --no-boot
+test: (apply "--no-boot") 
 
 # create a new bootable generation, but don't switch into it.
-boot:
-    nixos apply --no-activate
+boot: (apply "--no-activate")
 
 # list existing nixos generations
 list:

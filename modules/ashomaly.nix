@@ -2,7 +2,9 @@
 {
   flake.modules = self.factory.user "ashomaly" true {
     imports = with self.modules.nixos; [
-      helix
+      nixos-cli
+
+      (self.factory.defaultEditor "helix")
       kitty
       yazi
 
