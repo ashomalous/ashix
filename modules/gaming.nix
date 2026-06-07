@@ -1,27 +1,50 @@
 {
-  flake.aspects = { aspects, ... }: {
-    gaming = {
-      includes = with aspects; [
-        windows-compat
+  flake.aspects.gaming.nixos =
+    { lib, pkgs, ... }:
+    {
+      programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        gamescopeSession.enable = true;
+      };
 
-        steam
-        gamescope
-        gamemode
-      ];
+      programs.gamemode = {
+        enable = true;
+        settings = {
+          general = {
+            renice = 10;
+          };
 
-      nixos =
-        { pkgs, ... }:
-        {
-          environment.systemPackages = with pkgs; [
-            heroic
-            mangohud
-            goverlay
-            joystickwake
-            lutris
-            umu-launcher
-            faugus-launcher
-          ];
+          # Warning: GPU optimisations have the potential to damage hardware
+          gpu = {
+            apply_gpu_optimisations = "accept-responsibility";
+            gpu_device = 0;
+          };
+
+          custom = {
+            start = "${lib.getExe pkgs.libnotify "notify-send"} 'GameMode started'";
+            end = "${lib.getExe pkgs.libnotify "notify-send"} 'GameMode ended'";
+          };
         };
+      };
+
+      hardware.graphics.enable32Bit = true;
+
+      environment.systemPackages = with pkgs; [
+        lutris
+        umu-launcher
+        faugus-launcher
+
+        protonup-qt
+        winetricks
+
+        mangohud
+        gamemode
+
+        sc-controller
+
+        nvtopPackages.full
+      ];
     };
-  };
 }

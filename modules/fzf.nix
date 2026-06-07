@@ -1,5 +1,5 @@
 {
-  flake.aspects.fzf.nixos = {
+  flake.aspects.fzf.nixos = _: {
     programs.fzf.fuzzyCompletion = true;
   };
 }

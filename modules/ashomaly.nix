@@ -19,6 +19,8 @@
           kanata
 
           media
+
+          discord
         ];
       };
     };
