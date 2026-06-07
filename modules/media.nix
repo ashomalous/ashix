@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.media =
+  flake.aspects.media.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

@@ -1,21 +1,22 @@
-{ self, ... }:
 {
-  flake.modules.nixos.igloo = {
-    imports = with self.modules.nixos; [
-      system-desktop
-      systemd-boot
-      quietBoot
-      bluetooth
+  flake.aspects = { aspects, ... }: {
+    igloo = {
+      includes = with aspects; [
+        system-desktop
+        systemd-boot
+        quietBoot
+        bluetooth
 
-      niri
-      dank-material-shell
-      ly
+        niri
+        dank-material-shell
+        ly
 
-      gaming
+        gaming
 
-      flatpak
+        flatpak
 
-      ashomaly
-    ];
+        ashomaly
+      ];
+    };
   };
 }

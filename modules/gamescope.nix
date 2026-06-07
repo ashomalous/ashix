@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.gamescope = {
+  flake.aspects.gamescope.nixos = {
     programs.gamescope.enable = true;
   };
 }

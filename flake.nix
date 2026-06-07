@@ -59,6 +59,7 @@
       inputs.optnix.follows = "optnix";
     };
 
+    flake-aspects.url = "github:vic/flake-aspects";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

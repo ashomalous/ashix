@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.office =
+  flake.aspects.office.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

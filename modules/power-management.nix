@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.power-management = {
+  flake.aspects.power-management.nixos = {
     powerManagement.enable = true;
     powerManagement.powertop.enable = true;
     services.power-profiles-daemon.enable = true;

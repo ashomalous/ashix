@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.igloo = {
+  flake.aspects.igloo.nixos = {
     fileSystems = {
       "/" = {
         device = "/dev/disk/by-uuid/6ee28db1-4299-4e20-9f42-6f3f2b7bccf7";

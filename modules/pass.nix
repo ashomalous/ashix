@@ -1,10 +1,12 @@
-{ self, ... }:
 {
-  flake.modules.nixos.pass =
-    { pkgs, ... }:
-    {
-      imports = with self.modules.nixos; [ gnupg ];
-
-      environment.systemPackages = with pkgs; [ pass ];
+  flake.aspects = { aspects, ... }: {
+    pass = {
+      includes = with aspects; [ gnupg ];
+      nixos =
+        { pkgs, ... }:
+        {
+          environment.systemPackages = with pkgs; [ pass ];
+        };
     };
+  };
 }

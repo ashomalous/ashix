@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.initrd = {
+  flake.aspects.initrd.nixos = {
     boot.initrd.systemd.enable = true;
   };
 }

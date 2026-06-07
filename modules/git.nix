@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.git = {
+  flake.aspects.git.nixos = {
     programs.git.enable = true;
   };
 }

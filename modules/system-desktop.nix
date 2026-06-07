@@ -1,13 +1,14 @@
-{ self, ... }:
 {
-  flake.modules.nixos.system-desktop = {
-    imports = with self.modules.nixos; [
-      system-cli
+  flake.aspects = { aspects, ... }: {
+    system-desktop = {
+      includes = with aspects; [
+        system-cli
 
-      printing
+        printing
 
-      zen-browser
-      office
-    ];
+        zen-browser
+        office
+      ];
+    };
   };
 }

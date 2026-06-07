@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.gdm = {
+  flake.aspects.gdm.nixos = {
     services.displayManager.gdm = {
       enable = true;
       wayland = true;

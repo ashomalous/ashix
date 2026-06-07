@@ -1,22 +1,25 @@
-{ self, ... }:
 {
-  flake.modules = self.factory.user "ashomaly" true {
-    imports = with self.modules.nixos; [
-      nixos-cli
+  flake.aspects =
+    { aspects, ... }:
+    {
+      ashomaly = {
+        includes = with aspects; [
+          (factory._.user "ashomaly")
 
-      (self.factory.defaultEditor "helix")
-      kitty
-      yazi
+          nixos-cli
 
-      localsend
-      pass
-      blender
+          (factory._.defaultEditor "helix")
+          kitty
+          yazi
 
-      kanata
+          localsend
+          pass
+          blender
 
-      media
-    ];
+          kanata
 
-    users.users.ashomaly.extraGroups = [ "uinput" ];
-  };
+          media
+        ];
+      };
+    };
 }

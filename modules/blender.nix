@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.nixos.blender =
+  flake.aspects.blender.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = [

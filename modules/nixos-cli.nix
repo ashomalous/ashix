@@ -1,72 +1,76 @@
-{ inputs, self, ... }: {
-  flake.modules.nixos.nixos-cli = _: {
-    imports = [
-      inputs.nixos-cli.nixosModules.nixos-cli
-    ]
-    ++ (with self.modules.nixos; [
-      nvd
-      nix-output-monitor
-    ]);
+{ inputs, ... }: {
+  flake.aspects = { aspects, ... }: {
+    nixos-cli = {
+      includes = with aspects; [
+        nvd
+        nix-output-monitor
+      ];
+      nixos = _: {
+        imports = [
+          inputs.nixos-cli.nixosModules.nixos-cli
+        ];
 
-    programs.nixos-cli = {
-      enable = true;
-      settings = {
-        aliases = rec {
-          switch = [ "apply" ];
-          test = [
-            "apply"
-            "--no-boot"
-          ];
-          boot = [
-            "apply"
-            "--no-activate"
-          ];
-          build = boot ++ [
-            "--no-boot"
-            "--output"
-            "./result"
-          ];
-          build-image = build ++ [ "--image" ];
-          build-vm = build ++ [ "--vm" ];
-          build-vm-with-bootloader = build ++ [ "--vm-with-bootloader" ];
-          dry-activate = [
-            "apply"
-            "--dry"
-          ];
-          dry-build = dry-activate ++ [
-            "--no-boot"
-            "--no-activate"
-          ];
-          eval = [
-            "apply"
-            "--eval-only"
-          ];
-          list-generations = [
-            "generation"
-            "list"
-            "--table"
-          ];
+        programs.nixos-cli = {
+          enable = true;
+          settings = {
+            aliases = rec {
+              switch = [ "apply" ];
+              test = [
+                "apply"
+                "--no-boot"
+              ];
+              boot = [
+                "apply"
+                "--no-activate"
+              ];
+              build = boot ++ [
+                "--no-boot"
+                "--output"
+                "./result"
+              ];
+              build-image = build ++ [ "--image" ];
+              build-vm = build ++ [ "--vm" ];
+              build-vm-with-bootloader = build ++ [ "--vm-with-bootloader" ];
+              dry-activate = [
+                "apply"
+                "--dry"
+              ];
+              dry-build = dry-activate ++ [
+                "--no-boot"
+                "--no-activate"
+              ];
+              eval = [
+                "apply"
+                "--eval-only"
+              ];
+              list-generations = [
+                "generation"
+                "list"
+                "--table"
+              ];
+            };
+            color = true;
+
+            differ = {
+              tool = "command";
+              command = [
+                "nvd"
+                "diff"
+              ];
+            };
+
+            apply.use_nom = true;
+            apply.reexec_as_root = true;
+
+            rollback.enable = true;
+          };
         };
-        color = true;
 
-        differ = {
-          tool = "command";
-          command = [
-            "nvd"
-            "diff"
-          ];
+        nix.settings = {
+          substituters = [ "https://watersucks.cachix.org" ];
+          trusted-public-keys = [ "watersucks.cachix.org-1:6gadPC5R8iLWQ3EUtfu3GFrVY7X6I4Fwz/ihW25Jbv8=" ];
         };
-
-        apply.use_nom = true;
-        apply.reexec_as_root = true;
-
-        rollback.enable = true;
       };
-    };
-
-    nix.settings = {
-      substituters = [ "https://watersucks.cachix.org" ];
-      trusted-public-keys = [ "watersucks.cachix.org-1:6gadPC5R8iLWQ3EUtfu3GFrVY7X6I4Fwz/ihW25Jbv8=" ];
     };
   };
 }

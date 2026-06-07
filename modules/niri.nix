@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.niri =
+  flake.aspects.niri.nixos =
     { pkgs, ... }:
     {
       programs.niri.enable = true;

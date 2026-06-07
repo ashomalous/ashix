@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.gnupg = {
+  flake.aspects.gnupg.nixos = {
     programs.gnupg.agent.enable = true;
   };
 }

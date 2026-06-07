@@ -1,8 +1,8 @@
 {
-  flake.modules.nixos.discord = { pkgs, ... }: {
+  flake.aspects.discord.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [ vesktop ];
   };
-  flake.modules.nixos.discord-tui = { pkgs, ... }: {
+  flake.aspects.discord-tui.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [ discordo ];
   };
 }

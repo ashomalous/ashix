@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.igloo = {
+  flake.aspects.igloo.nixos = {
     hardware.facter.reportPath = ./facter.json;
   };
 }

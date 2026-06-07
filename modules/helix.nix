@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.helix =
+  flake.aspects.helix.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [ helix ];

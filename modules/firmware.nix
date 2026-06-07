@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.firmware = {
+  flake.aspects.firmware.nixos = {
     services.fwupd.enable = true;
     hardware.enableAllFirmware = true;
     hardware.enableRedistributableFirmware = true;

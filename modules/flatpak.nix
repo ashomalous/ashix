@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.flatpak = _: {
+  flake.aspects.flatpak.nixos = _: {
     services.flatpak.enable = true;
   };
 }

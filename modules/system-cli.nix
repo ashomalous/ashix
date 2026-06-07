@@ -1,16 +1,17 @@
-{ self, ... }:
 {
-  flake.modules.nixos.system-cli = {
-    imports = with self.modules.nixos; [
-      system-default
+  flake.aspects = { aspects, ... }: {
+    system-cli = {
+      includes = with aspects; [
+        system-default
 
-      ssh
-      firmware
-      cli-tools
+        ssh
+        firmware
+        cli-tools
 
-      shell
+        shell
 
-      fonts
-    ];
+        fonts
+      ];
+    };
   };
 }

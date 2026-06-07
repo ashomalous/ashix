@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.localsend = {
+  flake.aspects.localsend.nixos = {
     programs.localsend = {
       enable = true;
       openFirewall = true;

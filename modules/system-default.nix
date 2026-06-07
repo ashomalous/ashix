@@ -1,13 +1,14 @@
-{ self, ... }:
 {
-  flake.modules.nixos.system-default = {
-    imports = with self.modules.nixos; [
-      system-minimal
+  flake.aspects = { aspects, ... }: {
+    system-default = {
+      includes = with aspects; [
+        system-minimal
 
-      power-management
-      networking
-      locale
-      comma
-    ];
+        power-management
+        networking
+        locale
+        comma
+      ];
+    };
   };
 }

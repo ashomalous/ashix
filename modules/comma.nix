@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.comma = _: {
+  flake.aspects.comma.nixos = _: {
     imports = [ inputs.nix-index-database.nixosModules.default ];
 
     programs.nix-index-database.comma.enable = true;
