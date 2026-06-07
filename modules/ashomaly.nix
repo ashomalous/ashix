@@ -4,7 +4,7 @@
     {
       ashomaly = {
         includes = with aspects; [
-          (factory._.user "ashomaly")
+          (factory._.primaryUser "ashomaly")
 
           nixos-cli
 
