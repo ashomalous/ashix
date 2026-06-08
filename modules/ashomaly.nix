@@ -9,6 +9,7 @@
           nixos-cli
 
           (factory._.defaultEditor "helix")
+          neovim
           kitty
           yazi
 
