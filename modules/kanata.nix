@@ -1,5 +1,5 @@
 {
-  flake.aspects.kanata.nixos = _: {
+  den.aspects.kanata.nixos = {
     services.kanata = {
       enable = true;
       keyboards.default = {

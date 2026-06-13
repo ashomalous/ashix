@@ -1,5 +1,5 @@
 {
-  flake.aspects.quietBoot.nixos = {
+  den.aspects.quietBoot.nixos = {
     console = {
       useXkbConfig = true;
       earlySetup = false;

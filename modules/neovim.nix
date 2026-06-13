@@ -1,5 +1,5 @@
 {
-  flake.aspects.neovim.nixos = { pkgs, ... }: {
+  den.aspects.neovim.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       neovim
 

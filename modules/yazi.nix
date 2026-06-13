@@ -1,5 +1,5 @@
 {
-  flake.aspects.yazi.nixos = _: {
+  den.aspects.yazi.nixos = {
     programs.yazi.enable = true;
   };
 }

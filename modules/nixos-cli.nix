@@ -1,11 +1,11 @@
-{ inputs, ... }: {
-  flake.aspects = { aspects, ... }: {
+{ inputs, den, ... }: {
+  den.aspects = {
     nixos-cli = {
-      includes = with aspects; [
+      includes = with den.aspects; [
         nvd
         nix-output-monitor
       ];
-      nixos = _: {
+      nixos = {
         imports = [
           inputs.nixos-cli.nixosModules.nixos-cli
         ];

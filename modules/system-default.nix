@@ -1,14 +1,12 @@
-{
-  flake.aspects = { aspects, ... }: {
-    system-default = {
-      includes = with aspects; [
-        system-minimal
+{ den, ... }: {
+  den.aspects.system-default = {
+    includes = with den.aspects; [
+      system-minimal
 
-        power-management
-        networking
-        locale
-        comma
-      ];
-    };
+      power-management
+      networking
+      locale
+      comma
+    ];
   };
 }

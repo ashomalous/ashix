@@ -1,5 +1,5 @@
 {
-  flake.aspects.igloo.nixos = {
+  den.aspects.igloo.nixos = {
     hardware.facter.reportPath = ./facter.json;
   };
 }

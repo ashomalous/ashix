@@ -1,17 +1,15 @@
-{
-  flake.aspects = { aspects, ... }: {
-    system-cli = {
-      includes = with aspects; [
-        system-default
+{ den, ... }: {
+  den.aspects.system-cli = {
+    includes = with den.aspects; [
+      system-default
 
-        ssh
-        firmware
-        cli-tools
+      ssh
+      firmware
+      cli-tools
 
-        shell
+      shell
 
-        fonts
-      ];
-    };
+      fonts
+    ];
   };
 }

@@ -1,12 +1,10 @@
-{
-  flake.aspects = { aspects, ... }: {
-    pass = {
-      includes = with aspects; [ gnupg ];
-      nixos =
-        { pkgs, ... }:
-        {
-          environment.systemPackages = with pkgs; [ pass ];
-        };
-    };
+{ den, ... }: {
+  den.aspects.pass = {
+    includes = with den.aspects; [ gnupg ];
+    nixos =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = with pkgs; [ pass ];
+      };
   };
 }

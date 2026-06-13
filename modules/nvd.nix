@@ -1,5 +1,5 @@
 {
-  flake.aspects.nvd.nixos = { pkgs, ... }: {
+  den.aspects.nvd.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [ nvd ];
   };
 }

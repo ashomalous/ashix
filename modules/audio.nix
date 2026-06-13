@@ -1,10 +1,10 @@
 {
-  flake.aspects.pulseaudio.nixos = _: {
+  den.aspects.pulseaudio.nixos = {
     services.pulseaudio.enable = true;
     security.rtkit.enable = true;
   };
 
-  flake.aspects.pipewire.nixos =
+  den.aspects.pipewire.nixos =
     { pkgs, ... }:
     {
       services.pulseaudio.enable = false;

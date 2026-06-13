@@ -1,5 +1,5 @@
 {
-  flake.aspects.gaming.nixos =
+  den.aspects.gaming.nixos =
     { lib, pkgs, ... }:
     {
       programs.steam = {

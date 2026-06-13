@@ -1,14 +1,12 @@
-{
-  flake.aspects = { aspects, ... }: {
-    system-desktop = {
-      includes = with aspects; [
-        system-cli
+{ den, ... }: {
+  den.aspects.system-desktop = {
+    includes = with den.aspects; [
+      system-cli
 
-        printing
+      printing
 
-        zen-browser
-        office
-      ];
-    };
+      zen-browser
+      office
+    ];
   };
 }

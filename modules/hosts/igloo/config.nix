@@ -1,7 +1,7 @@
-{
-  flake.aspects = { aspects, ... }: {
+{ den, ... }: {
+  den.aspects = {
     igloo = {
-      includes = with aspects; [
+      includes = with den.aspects; [
         system-desktop
         systemd-boot
         quietBoot

@@ -1,5 +1,5 @@
 {
-  flake.aspects.printing.nixos = {
+  den.aspects.printing.nixos = {
     services.printing.enable = true;
     services.avahi = {
       enable = true;

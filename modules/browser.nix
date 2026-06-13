@@ -1,11 +1,11 @@
 { inputs, ... }: {
-  flake.aspects.firefox.nixos =
+  den.aspects.firefox.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [ firefox ];
     };
 
-  flake.aspects.zen-browser.nixos =
+  den.aspects.zen-browser.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = [

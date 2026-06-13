@@ -1,5 +1,5 @@
 {
-  flake.aspects.kitty.nixos =
+  den.aspects.kitty.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [ kitty ];

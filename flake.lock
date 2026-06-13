@@ -19,6 +19,21 @@
         "url": "https://flakehub.com/f/edolstra/blender-bin/%2A"
       }
     },
+    "den": {
+      "locked": {
+        "lastModified": 1781073678,
+        "narHash": "sha256-LGEjo+XKYH0swH02PMJd/Vho+4RHa2LNLvtK1POV++8=",
+        "owner": "denful",
+        "repo": "den",
+        "rev": "41aa2558b31c9b7c539a400e332b32876f7238e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "denful",
+        "repo": "den",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -171,11 +186,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1780453794,
-        "narHash": "sha256-hhAl/iKiurXPn7rdzDgiSuRB8tqOB6f0buWkh8Y9mkY=",
-        "rev": "6b316287bae2ee04c9b93c8c858d930fd07d7338",
+        "lastModified": 1780902259,
+        "narHash": "sha256-YMnBf9lk/LYgvqfmSSJuOGigtRs5Lsy26pJHVlR9yMY=",
+        "rev": "bd0ff2d3eac24699c3664d5966b9ef36f388e2ca",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.1183.6b316287bae2/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.1550.bd0ff2d3eac2/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -221,6 +236,7 @@
     "root": {
       "inputs": {
         "blender-bin": "blender-bin",
+        "den": "den",
         "devshell": "devshell",
         "flake-aspects": "flake-aspects",
         "flake-compat": "flake-compat",

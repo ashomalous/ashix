@@ -1,28 +1,29 @@
-{
-  flake.aspects =
-    { aspects, ... }:
-    {
-      ashomaly = {
-        includes = with aspects; [
-          (factory._.primaryUser "ashomaly")
+{ den, ... }: {
+  den.aspects = {
+    ashomaly = {
+      includes = with den.aspects; [
+        den.batteries.primary-user
 
-          nixos-cli
+        nixos-cli
 
-          (factory._.defaultEditor "helix")
-          neovim
-          kitty
-          yazi
+        # (factory._.defaultEditor "helix")
+        helix
+        neovim
+        kitty
+        yazi
 
-          localsend
-          pass
-          blender
+        localsend
+        pass
+        blender
 
-          kanata
+        kanata
 
-          media
+        media
 
-          discord
-        ];
-      };
+        discord
+
+        development
+      ];
     };
+  };
 }

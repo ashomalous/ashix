@@ -15,6 +15,8 @@
 
     import-tree.url = "github:denful/import-tree";
 
+    den.url = "github:denful/den";
+
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -1,5 +1,5 @@
 {
-  flake.aspects.shell.nixos = {
+  den.aspects.shell.nixos = {
     programs.zsh = {
       enable = true;
       autosuggestions.enable = true;

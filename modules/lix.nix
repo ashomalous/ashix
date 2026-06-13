@@ -1,5 +1,5 @@
 {
-  flake.aspects.lix.nixos =
+  den.aspects.lix.nixos =
     { pkgs, ... }:
     {
       nix.package = pkgs.lixPackageSets.stable.lix;

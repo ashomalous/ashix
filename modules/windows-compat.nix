@@ -1,5 +1,5 @@
 {
-  flake.aspects.windows-compat.nixos =
+  den.aspects.windows-compat.nixos =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

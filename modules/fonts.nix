@@ -1,5 +1,5 @@
 {
-  flake.aspects.fonts.nixos =
+  den.aspects.fonts.nixos =
     { pkgs, ... }:
     {
       fonts.packages = with pkgs; [

@@ -1,5 +1,5 @@
 {
-  flake.aspects = { aspects, ... }: {
+  den.aspects = { aspects, ... }: {
     lutris = {
       includes = with aspects; [
         gamescope

@@ -1,9 +1,14 @@
-{
-  flake.aspects.niri.nixos =
-    { pkgs, ... }:
-    {
+{ den, ... }: {
+  den.aspects.niri = {
+    includes = [
+      den.aspects.wayland
+    ];
+
+    nixos = {
       programs.niri.enable = true;
 
-      environment.systemPackages = with pkgs; [ xwayland-satellite ];
+      security.polkit.enable = true;
+      services.gnome.gnome-keyring.enable = true;
     };
+  };
 }

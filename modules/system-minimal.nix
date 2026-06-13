@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.aspects.system-minimal.nixos =
+  den.aspects.system-minimal.nixos =
     { lib, pkgs, ... }:
     {
       nixpkgs.overlays = [
