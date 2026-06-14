@@ -9,6 +9,8 @@
         # (factory._.defaultEditor "helix")
         helix
         neovim
+        emacs
+        
         kitty
         yazi
 

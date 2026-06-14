@@ -8,6 +8,8 @@
         nerd-fonts.jetbrains-mono
 
         noto-fonts-color-emoji
+
+        nerd-fonts.symbols-only
       ];
     };
 }
