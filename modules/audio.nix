@@ -2,6 +2,8 @@
   den.aspects.pulseaudio.nixos = {
     services.pulseaudio.enable = true;
     security.rtkit.enable = true;
+
+    persist.user.directories = [ ".config/pulse" ];
   };
 
   den.aspects.pipewire.nixos =
@@ -20,5 +22,7 @@
         pwvucontrol
         alsa-scarlett-gui
       ];
+
+      persist.user.directories = [ ".local/state/wireplumber" ];
     };
 }

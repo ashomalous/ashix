@@ -2,6 +2,10 @@
   "version": 1,
   "system": "x86_64-linux",
   "virtualisation": "none",
+  "uefi": {
+    "supported": true,
+    "platform_size": 64
+  },
   "hardware": {
     "bios": {
       "apm_info": {
@@ -1242,6 +1246,7 @@
           "eibrs_pbrsb",
           "rfds",
           "bhi",
+          "spectre_v2_user",
           "vmscape"
         ],
         "power_management": [
@@ -1258,7 +1263,6 @@
         "fpu_exception": false,
         "cpuid_level": 32,
         "write_protect": false,
-        "tlb_size": 32764,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -1459,7 +1463,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.87 xhci-hcd",
+          "name": "Linux 6.18.34 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1469,11 +1473,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.12.87 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.34 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -1521,7 +1525,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
         "index": 48,
@@ -1546,7 +1550,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.87 xhci-hcd",
+          "name": "Linux 6.18.34 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1556,11 +1560,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.12.87 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.34 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -1598,7 +1602,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
         "index": 51,
@@ -1623,7 +1627,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.87 xhci-hcd",
+          "name": "Linux 6.18.34 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1633,11 +1637,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:0d.0",
-        "model": "Linux 6.12.87 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.34 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0d.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -1685,7 +1689,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
         "index": 55,
@@ -1710,7 +1714,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.87 xhci-hcd",
+          "name": "Linux 6.18.34 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1720,11 +1724,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:0d.0",
-        "model": "Linux 6.12.87 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.34 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:0d.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -1762,7 +1766,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "memory": [
@@ -1924,9 +1928,9 @@
           "hex": "cf00",
           "value": 52992
         },
-        "sysfs_id": "/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-1/i2c-SYNACF00:00/0018:06CB:CF00.0001/input/input14",
+        "sysfs_id": "/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-15/i2c-SYNACF00:00/0018:06CB:CF00.0001/input/input15",
         "unix_device_names": [
-          "/dev/input/event6",
+          "/dev/input/event7",
           "/dev/input/ + handler"
         ]
       }
@@ -2102,28 +2106,6 @@
     "network_interface": [
       {
         "index": 56,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 57,
         "attached_to": 24,
         "class_list": [
           "network_interface"
@@ -2161,6 +2143,28 @@
         ],
         "driver_modules": [
           "iwlwifi"
+        ]
+      },
+      {
+        "index": 57,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
         ]
       }
     ],

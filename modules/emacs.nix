@@ -10,7 +10,7 @@
     ];
 
     environment.variables = {
-      PATH = ["~/.config/emacs/bin"];
+      PATH = [ "~/.config/emacs/bin" ];
     };
   };
 }

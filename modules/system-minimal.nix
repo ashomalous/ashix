@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   den.aspects.system-minimal.nixos =
-    { lib, pkgs, ... }:
+    { pkgs, ... }:
     {
       nixpkgs.overlays = [
         (final: _prev: {
@@ -14,9 +14,9 @@
       nixpkgs.config.allowUnfree = true;
       system.stateVersion = "25.05";
 
-      nixpkgs.flake.setFlakeRegistry = true;
-      nix.registry =
-        inputs |> lib.filterAttrs (_: lib.isType "flake") |> lib.mapAttrs (_: flake: { inherit flake; });
+      # nixpkgs.flake.setFlakeRegistry = true;
+      # nix.registry = ; =
+      #   inputs |> lib.filterAttrs (_: lib.isType "flake") |> lib.mapAttrs (_: flake: { inherit flake; });
 
       nix.settings = {
         substituters = [

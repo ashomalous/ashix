@@ -1,31 +1,35 @@
 { den, ... }: {
-  den.aspects = {
-    ashomaly = {
-      includes = with den.aspects; [
-        den.batteries.primary-user
+  den.aspects.ashomaly = {
+    includes = with den.aspects; [
+      den.batteries.primary-user
 
-        nixos-cli
+      nixos-cli
 
-        # (factory._.defaultEditor "helix")
-        helix
-        neovim
-        emacs
-        
-        kitty
-        yazi
+      # (factory._.defaultEditor "helix")
+      helix
+      # neovim
+      # emacs
 
-        localsend
-        pass
-        blender
+      kitty
+      yazi
 
-        kanata
+      localsend
+      # pass
+      # blender
 
-        media
+      # kanata
 
-        discord
+      # media
 
-        development
-      ];
+      # discord
+
+      # development
+
+      (set-xkb "us" "colemak" { })
+    ];
+
+    nixos = _: {
+      users.users.ashomaly.hashedPasswordFile = "/persist/passwd";
     };
   };
 }

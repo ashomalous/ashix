@@ -2,20 +2,22 @@
   den.aspects = {
     igloo = {
       includes = with den.aspects; [
-        system-desktop
+        disk-with-persistence
+        # system-desktop
+        system-cli
         systemd-boot
-        quietBoot
+        # quietBoot
         bluetooth
 
         niri
-        dank-material-shell
+        # dank-material-shell
         ly
 
-        gaming
+        # gaming
 
-        flatpak
+        # flatpak
 
-        ashomaly
+        # ashomaly
       ];
     };
   };
