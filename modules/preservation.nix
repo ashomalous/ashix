@@ -20,6 +20,7 @@
             directory = "/var/lib/nixos";
             inInitrd = true;
           }
+          "/tmp" # keep /tmp off tmpfs
         ];
         files = [
           {

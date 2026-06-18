@@ -3,8 +3,8 @@
     igloo = {
       includes = with den.aspects; [
         disk-with-persistence
-        # system-desktop
-        system-cli
+        system-desktop
+        # system-cli
         systemd-boot
         # quietBoot
         bluetooth
@@ -17,7 +17,7 @@
 
         # flatpak
 
-        # ashomaly
+        ashomaly
       ];
     };
   };

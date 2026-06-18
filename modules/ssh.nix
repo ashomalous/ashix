@@ -1,22 +1,25 @@
-{
-  den.aspects.ssh.nixos = {
-    services.openssh = {
-      enable = true;
-      openFirewall = true;
-      settings = {
-        PasswordAuthentication = true;
-        PermitRootLogin = "yes";
+{ den, ... }: {
+  den.aspects.ssh = {
+    includes = with den.aspects; [ pki ];
+    nixos = {
+      services.openssh = {
+        enable = true;
+        openFirewall = true;
+        settings = {
+          PasswordAuthentication = true;
+          PermitRootLogin = "yes";
+        };
       };
-    };
 
-    persist = {
-      directories = [ "/etc/ssh" ];
-      user.directories = [
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
-      ];
+      persist = {
+        directories = [ "/etc/ssh" ];
+        user.directories = [
+          {
+            directory = ".ssh";
+            mode = "0700";
+          }
+        ];
+      };
     };
   };
 }

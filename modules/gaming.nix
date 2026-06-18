@@ -46,5 +46,7 @@
 
         nvtopPackages.full
       ];
+
+      persist.user.directories = [ "Games" ];
     };
 }

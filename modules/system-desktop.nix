@@ -7,6 +7,8 @@
 
       zen-browser
       office
+
+      pipewire
     ];
   };
 }
