@@ -1,9 +1,15 @@
 { den, ... }: {
   den.aspects.cli-tools = {
     includes = with den.aspects; [
+      # terminal multiplexer
+      zellij
+
+      # version control
       git
       gh
-      zellij
+
+      # monitoring
+      btop
     ];
 
     nixos =

@@ -14,6 +14,8 @@
       yazi
 
       localsend
+
+      quickshell
       # pass
       # blender
 

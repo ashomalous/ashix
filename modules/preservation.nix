@@ -1,6 +1,6 @@
 { inputs, ... }: {
   den.aspects.preservation = { user, ... }: {
-    nixos = { config, ... }: {
+    nixos = { config, lib, ... }: {
       imports = [ inputs.preservation.nixosModules.default ];
 
       boot.initrd.systemd.enable = true; # required by preservation
@@ -35,21 +35,21 @@
         ];
       };
 
-      # # these directories would by default be unwritable to the user as they'd be owned by root
-      # systemd.tmpfiles.settings.preservation =
-      #   let
-      #     permission = {
-      #       user = user.name;
-      #       group = lib.mkForce user.name;
-      #       mode = lib.mkForce "0750";
-      #     };
-      #   in
-      #   {
-      #     "/home/${user.name}/.config".d = permission;
-      #     "/home/${user.name}/.local".d = permission;
-      #     "/home/${user.name}/.local/share".d = permission;
-      #     "/home/${user.name}/.local/state".d = permission;
-      #   };
+      # these directories would by default be unwritable to the user as they'd be owned by root
+      systemd.tmpfiles.settings.preservation =
+        let
+          permission = {
+            user = user.name;
+            group = lib.mkForce user.name;
+            mode = lib.mkForce "0750";
+          };
+        in
+        {
+          "/home/${user.name}/.config".d = permission;
+          "/home/${user.name}/.local".d = permission;
+          "/home/${user.name}/.local/share".d = permission;
+          "/home/${user.name}/.local/state".d = permission;
+        };
 
       # HACK: fix for /etc/machine-id
       # systemd-machine-id-commit.service fails, but that's not relevant so it's disabled
