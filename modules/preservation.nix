@@ -20,7 +20,7 @@
             directory = "/var/lib/nixos";
             inInitrd = true;
           }
-          "/tmp" # keep /tmp off tmpfs
+          # "/tmp" # keep /tmp off tmpfs
         ];
         files = [
           {
@@ -32,6 +32,7 @@
           "ashix" # bootstrap this flake's safety
 
           ".cache" # keep .cache off tmpfs to avoid high RAM usage
+          "tmp"
         ];
       };
 
