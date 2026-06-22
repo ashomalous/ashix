@@ -4,6 +4,6 @@
     {
       environment.systemPackages = with pkgs.unstable; [ zellij ];
 
-      # persist.user.directories 
+      # persist.user.directories
     };
 }

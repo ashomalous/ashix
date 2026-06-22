@@ -1,6 +1,7 @@
 { den, ... }: {
   den.aspects.ashomaly = {
     includes = with den.aspects; [
+      den.batteries.define-user
       den.batteries.primary-user
 
       nixos-cli
@@ -19,11 +20,13 @@
       # pass
       # blender
 
+      dunst
+
       # kanata
 
       # media
 
-      # discord
+      discord
 
       # development
 

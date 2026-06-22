@@ -6,6 +6,6 @@
         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
-      persist.user.directories = [".config/zen"];
+      persist.user.directories = [ ".config/zen" ];
     };
 }

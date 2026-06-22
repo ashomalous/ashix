@@ -4,6 +4,6 @@
     {
       environment.systemPackages = with pkgs; [ kitty ];
 
-      persist.user.directories = [".config/kitty"];
+      persist.user.directories = [ ".config/kitty" ];
     };
 }

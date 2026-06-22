@@ -6,5 +6,7 @@
       den.batteries.hostname
       den.batteries.define-user
     ];
+
+    schema.host.hjem.enable = true;
   };
 }
