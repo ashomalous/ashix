@@ -27,6 +27,7 @@
       # media
 
       discord
+      recording
 
       # development
 

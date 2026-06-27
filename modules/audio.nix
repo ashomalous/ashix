@@ -25,4 +25,8 @@
 
       persist.user.directories = [ ".local/state/wireplumber" ];
     };
+
+  den.aspects.recording.nixos = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [audacity];
+  };
 }
