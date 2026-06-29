@@ -21,6 +21,7 @@
       # blender
 
       dunst
+      rofi
 
       # kanata
 

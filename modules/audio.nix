@@ -27,6 +27,8 @@
     };
 
   den.aspects.recording.nixos = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [audacity];
+    environment.systemPackages = with pkgs; [ audacity ];
+
+    persist.user.directories = [ ".config/audacity" ];
   };
 }
