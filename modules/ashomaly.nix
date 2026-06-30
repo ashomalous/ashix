@@ -14,6 +14,8 @@
       kitty
       yazi
 
+      obsidian
+
       localsend
 
       quickshell

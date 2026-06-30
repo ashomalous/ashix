@@ -2,7 +2,7 @@
   den.aspects.preservation = { user, ... }: {
     includes = with den.aspects; [ initrd ]; # required by preservation
 
-    nixos = { config, lib, ... }: {
+    nixos = { config, ... }: {
       imports = [ inputs.preservation.nixosModules.default ];
 
       preservation = {
@@ -43,15 +43,11 @@
       # these directories would by default be unwritable to the user as they'd be owned by root
       systemd.tmpfiles.settings.preservation =
         let
-          permission =
-            let
-              user.name = "ashomaly";
-            in
-            {
-              user = user.name;
-              group = lib.mkForce user.name;
-              mode = lib.mkForce "0755";
-            };
+          permission = {
+            user = user.name;
+            group = "users";
+            mode = "0755";
+          };
         in
         {
           "/home/${user.name}/.config".d = permission;
