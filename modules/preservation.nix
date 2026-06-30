@@ -1,9 +1,10 @@
-{ inputs, ... }: {
+{ den, inputs, ... }: {
   den.aspects.preservation = { user, ... }: {
+    includes = with den.aspects; [ initrd ]; # required by preservation
+
     nixos = { config, lib, ... }: {
       imports = [ inputs.preservation.nixosModules.default ];
 
-      boot.initrd.systemd.enable = true; # required by preservation
       preservation = {
         enable = true;
 
@@ -20,7 +21,10 @@
             directory = "/var/lib/nixos";
             inInitrd = true;
           }
-          "/tmp" # keep /tmp off tmpfs
+          {
+            directory = "/tmp"; # keep /tmp off tmpfs
+            mode = "1777";
+          }
         ];
         files = [
           {
@@ -39,11 +43,15 @@
       # these directories would by default be unwritable to the user as they'd be owned by root
       systemd.tmpfiles.settings.preservation =
         let
-          permission = {
-            user = user.name;
-            group = lib.mkForce user.name;
-            mode = lib.mkForce "0750";
-          };
+          permission =
+            let
+              user.name = "ashomaly";
+            in
+            {
+              user = user.name;
+              group = lib.mkForce user.name;
+              mode = lib.mkForce "0755";
+            };
         in
         {
           "/home/${user.name}/.config".d = permission;
