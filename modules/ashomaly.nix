@@ -22,7 +22,8 @@
       # pass
       # blender
 
-      dunst
+      # dunst
+      mako
       rofi
 
       # kanata
