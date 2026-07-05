@@ -6,8 +6,8 @@
 
       nixos-cli
 
-      # (factory._.defaultEditor "helix")
-      helix
+      (defaultEditor "helix")
+      # helix
       # neovim
       # emacs
 
@@ -36,6 +36,8 @@
       # development
 
       (set-xkb "us" "colemak" { })
+
+      projects
     ];
 
     nixos = _: {
