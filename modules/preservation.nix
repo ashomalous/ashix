@@ -1,6 +1,11 @@
 { den, inputs, ... }: {
   den.aspects.preservation = { user, ... }: {
-    includes = with den.aspects; [ initrd ]; # required by preservation
+    includes = with den.aspects; [
+      initrd # required by preservation
+
+      persist # sane defaults for persistence
+      temporary # allows for creation of additional dirs/files declaratively
+    ];
 
     nixos = { config, ... }: {
       imports = [ inputs.preservation.nixosModules.default ];
@@ -12,32 +17,6 @@
           inherit (config.persist) directories files;
           users.${user.name} = { inherit (config.persist.user) directories files; };
         };
-      };
-
-      persist = {
-        directories = [
-          "/etc/nixos"
-          {
-            directory = "/var/lib/nixos";
-            inInitrd = true;
-          }
-          {
-            directory = "/tmp"; # keep /tmp off tmpfs
-            mode = "1777";
-          }
-        ];
-        files = [
-          {
-            file = "/etc/machine-id";
-            inInitrd = true;
-          }
-        ];
-        user.directories = [
-          "ashix" # bootstrap this flake's safety
-
-          ".cache" # keep .cache off tmpfs to avoid high RAM usage
-          "tmp"
-        ];
       };
 
       # these directories would by default be unwritable to the user as they'd be owned by root
@@ -73,37 +52,6 @@
       };
 
       boot.tmp.cleanOnBoot = true;
-    };
-  };
-
-  den.default.nixos = { config, lib, ... }: {
-    options.persist = {
-      dirName = lib.mkOption {
-        type = lib.types.singleLineStr;
-        default = "persist";
-      };
-      dir = lib.mkOption {
-        default = "/${config.persist.dirName}";
-      };
-
-      directories = lib.mkOption {
-        default = [ ];
-      };
-      files = lib.mkOption {
-        default = [ ];
-      };
-      user = lib.mkOption {
-        type = lib.types.submodule {
-          options = {
-            directories = lib.mkOption {
-              default = [ ];
-            };
-            files = lib.mkOption {
-              default = [ ];
-            };
-          };
-        };
-      };
     };
   };
 }

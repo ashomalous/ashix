@@ -18,9 +18,9 @@
 
       localsend
 
-      quickshell
+      # quickshell
       # pass
-      # blender
+      blender
 
       # dunst
       mako
@@ -31,7 +31,7 @@
       # media
 
       discord
-      recording
+      # recording
 
       # development
 
