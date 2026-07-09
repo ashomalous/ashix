@@ -14,7 +14,7 @@
         # dank-material-shell
         ly
 
-        # gaming
+        gaming
 
         # flatpak
 
