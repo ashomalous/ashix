@@ -1,5 +1,5 @@
 {
-  den.aspects.gamemode.nixos = {
+  den.aspects.gamemode.nixos = { lib, pkgs, ... }: {
     programs.gamemode = {
       enable = true;
       settings = {
@@ -12,6 +12,11 @@
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";
           gpu_device = 0;
+        };
+
+        custom = {
+          start = "${lib.getExe' pkgs.libnotify "notify-send"} 'GameMode started'";
+          end = "${lib.getExe' pkgs.libnotify "notify-send"} 'GameMode ended'";
         };
       };
     };
