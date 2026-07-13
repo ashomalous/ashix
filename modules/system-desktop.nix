@@ -8,6 +8,8 @@
       zen-browser
       office
 
+      brightness
+
       pipewire
     ];
   };
