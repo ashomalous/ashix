@@ -74,21 +74,6 @@
         "type": "github"
       }
     },
-    "flake-aspects": {
-      "locked": {
-        "lastModified": 1773552804,
-        "narHash": "sha256-a0kjpCZGnD5lt7yW6C3hzPhSf5KjnTyvX6XZ2NuhGs4=",
-        "owner": "vic",
-        "repo": "flake-aspects",
-        "rev": "56fa8d4d4772d58eb7f9d66c28c1cd2762b60423",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vic",
-        "repo": "flake-aspects",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -294,7 +279,6 @@
         "den": "den",
         "devshell": "devshell",
         "disko": "disko",
-        "flake-aspects": "flake-aspects",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "hjem": "hjem",
@@ -309,9 +293,30 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "optnix": "optnix",
         "preservation": "preservation",
+        "sls-steam": "sls-steam",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix",
         "zen-browser": "zen-browser"
+      }
+    },
+    "sls-steam": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783779952,
+        "narHash": "sha256-I1b0MCaVG8oWhqXmrt3CKY0MYrQVjXNP03ipDyCdJms=",
+        "owner": "AceSLS",
+        "repo": "SLSsteam",
+        "rev": "d35a69790bad24c060f89d1c910f9f118f529d5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AceSLS",
+        "repo": "SLSsteam",
+        "type": "github"
       }
     },
     "systems": {
