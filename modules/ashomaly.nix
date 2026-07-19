@@ -7,7 +7,6 @@
       nixos-cli
 
       (defaultEditor "helix")
-      # helix
       # neovim
       # emacs
 
@@ -32,6 +31,7 @@
 
       discord
       # recording
+      office
 
       # development
 
