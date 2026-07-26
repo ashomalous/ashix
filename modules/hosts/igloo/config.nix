@@ -18,6 +18,9 @@
 
       # flatpak
 
+      bibataCursors
+      catppuccinGtk
+
       ashomaly
     ];
   };
