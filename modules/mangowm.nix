@@ -14,6 +14,9 @@
 
       persist.directories = [ "/etc/mango" ];
       persist.user.directories = [ ".config/mango" ];
+
+      xdg.portal.wlr.enable = true;
+      xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
     };
   };
 }

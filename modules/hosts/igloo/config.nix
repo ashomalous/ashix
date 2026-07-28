@@ -5,19 +5,16 @@
       intelDrivers
 
       system-desktop
-      # system-cli
       systemd-boot
-      # quietBoot
       bluetooth
 
       niri
       mangowc
-      # dank-material-shell
       ly
+      waybar
 
       gaming
-
-      # flatpak
+      minecraft
 
       bibataCursors
       catppuccinGtk
