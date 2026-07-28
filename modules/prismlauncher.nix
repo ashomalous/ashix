@@ -5,5 +5,7 @@
         additionalPrograms = [ ffmpeg ];
       })
     ];
+
+    persist.user.directories = [".local/share/PrismLauncher"];
   };
 }
