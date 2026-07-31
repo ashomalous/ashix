@@ -10,7 +10,7 @@
       # bluetooth
 
       # niri
-      # mangowc
+      mangowc
       # dank-material-shell
       # ly
 
