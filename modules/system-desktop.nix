@@ -5,8 +5,8 @@
 
       printing
 
-      zen-browser
-      office
+      # zen-browser
+      # office
 
       brightness
 
