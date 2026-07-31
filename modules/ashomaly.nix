@@ -13,25 +13,25 @@
       kitty
       yazi
 
-      obsidian
+      # obsidian
 
-      localsend
+      # localsend
 
       # quickshell
       # pass
-      blender
+      # blender
 
       # dunst
-      mako
-      rofi
+      # mako
+      # rofi
 
       # kanata
 
       # media
 
-      discord
+      # discord
       # recording
-      office
+      # office
 
       # development
 
@@ -40,8 +40,8 @@
       projects
     ];
 
-    nixos = _: {
-      users.users.ashomaly.hashedPasswordFile = "/persist/passwd";
-    };
+    # nixos = _: {
+    #   users.users.ashomaly.hashedPasswordFile = "/persist/passwd";
+    # };
   };
 }
