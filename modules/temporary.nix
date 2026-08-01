@@ -1,17 +1,15 @@
 {
   den.aspects.temporary = { user, ... }: {
     nixos = { config, lib, ... }: {
-      # temporary.user.directories.".config" = {};
-      systemd.tmpfiles.settings.tmp-user-dirs =
-        config.temporary.user.directories
-        |> map (dir: {
+      systemd.tmpfiles.settings.tmp-user-dirs = lib.mkMerge (
+        map (dir: {
           "/home/${user.name}/${dir}".d = {
             user = user.name;
             group = "users";
             mode = "0755";
           };
-        })
-        |> lib.mkMerge;
+        }) config.temporary.user.directories
+      );
     };
   };
 

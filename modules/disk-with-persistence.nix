@@ -1,5 +1,5 @@
 { den, ... }: {
-  den.aspects.disk-with-persistence = device: {
+  den.aspects.disk-with-persistence = device: ramSize: {
     includes = with den.aspects; [
       disko
       preservation
@@ -45,7 +45,7 @@
             };
 
             swap = {
-              size = "16G";
+              size = ramSize;
 
               content = {
                 type = "swap";

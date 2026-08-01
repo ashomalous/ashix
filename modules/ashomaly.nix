@@ -10,34 +10,34 @@
       # neovim
       # emacs
 
-      kitty
-      yazi
+      # kitty
+      # yazi
 
-      obsidian
+      # obsidian
 
-      localsend
+      # localsend
 
       # quickshell
       # pass
-      blender
+      # blender
 
       # dunst
-      mako
-      rofi
+      # mako
+      # rofi
 
       # kanata
 
       # media
 
-      discord
+      # discord
       # recording
-      office
+      # office
 
       # development
 
       (set-xkb "us" "colemak" { })
 
-      projects
+      # projects
     ];
 
     nixos = _: {

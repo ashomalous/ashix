@@ -12,7 +12,7 @@
         })
       ];
       nixpkgs.config.allowUnfree = true;
-      system.stateVersion = "25.05";
+      # system.stateVersion = "25.05";
 
       # nixpkgs.flake.setFlakeRegistry = true;
       # nix.registry = ; =
@@ -32,7 +32,6 @@
         experimental-features = [
           "nix-command"
           "flakes"
-          "pipe-operators"
         ];
 
         download-buffer-size = 1024 * 1024 * 1024;

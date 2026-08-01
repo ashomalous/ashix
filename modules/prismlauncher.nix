@@ -6,6 +6,6 @@
       })
     ];
 
-    persist.user.directories = [".local/share/PrismLauncher"];
+    persist.user.directories = [ ".local/share/PrismLauncher" ];
   };
 }
