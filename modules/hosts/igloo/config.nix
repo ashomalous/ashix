@@ -5,20 +5,70 @@
       intelDrivers
       (stateVersion "25.05")
 
-      system-desktop
+      nixos-cli
+
       systemd-boot
+
+      printing
+
+      zen-browser
+      office
+
+      brightness
+
+      pipewire
+
       bluetooth
 
-      # niri
+      localsend
+
       mangowc
-      # ly
       waybar
+      kitty
+      yazi
+      mako
+
+      ssh
+      firmware
+      cli-tools
+      comma
+
+      shell
+
+      power-management
+      networking
+      fonts
+      locale
+      git
+
+      nix-settings
+
+      # obsidian
+
+      # quickshell
+      # pass
+      # blender
+
+      # dunst
+      # rofi
+
+      # kanata
+
+      # media
+
+      # recording
+      # office
+
+      # development
 
       gaming
       minecraft
+      discord
 
       bibataCursors
       catppuccinGtk
+
+      projects
 
       ashomaly
     ];
