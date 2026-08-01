@@ -3,6 +3,8 @@
     includes = with den.aspects; [
       gamescope
       gamemode
+
+      sls-steam
     ];
 
     nixos = { inputs', pkgs, ... }: {
@@ -15,13 +17,8 @@
 
         gamescopeSession.enable = true;
         protontricks.enable = true;
-
-        package = pkgs.steam.override {
-          extraEnv = {
-            LD_AUDIT = "${inputs'.sls-steam.packages.sls-steam}/library-inject.so:${inputs'.sls-steam.packages.sls-steam}/SLSsteam.so";
-          };
-        };
       };
+
       hardware.steam-hardware.enable = true;
       hardware.graphics.enable32Bit = true;
 
