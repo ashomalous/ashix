@@ -3,6 +3,8 @@
     includes = with den.aspects; [ (userGroups "input") ];
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [ waybar ];
+
+      persist.user.directories = [".config/waybar"];
     };
   };
 }
