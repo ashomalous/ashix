@@ -24,6 +24,8 @@
 
         ".cache" # keep .cache off tmpfs to avoid high RAM usage
         "tmp"
+
+        "persist"
       ];
     };
   };
