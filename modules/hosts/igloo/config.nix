@@ -68,6 +68,8 @@
       bibataCursors
       catppuccinGtk
 
+      deluge
+
       projects
 
       ashomaly
