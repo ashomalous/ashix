@@ -43,7 +43,7 @@
 
       nix-settings
 
-      # obsidian
+      obsidian
 
       # quickshell
       # pass
@@ -54,7 +54,7 @@
 
       # kanata
 
-      # media
+      media
 
       # recording
       # office
