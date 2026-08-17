@@ -1,9 +1,41 @@
-{
+{ inputs, ... }: {
   den.aspects.kitty.nixos =
-    { pkgs, ... }:
+    {self', ...}: 
     {
-      environment.systemPackages = with pkgs; [ kitty ];
+      environment.systemPackages = with self'.packages; [ kitty ];
 
-      persist.user.directories = [ ".config/kitty" ];
+      # persist.user.directories = [ ".config/kitty" ];
     };
+
+  perSystem = { pkgs, ... }: {
+    packages.kitty =
+      let
+        fira-mono = pkgs.nerd-fonts.fira-mono;
+        fontsConf = pkgs.makeFontsConf {
+          fontDirectories = [ fira-mono ];
+        };
+      in
+      inputs.wrappers.wrappers.kitty.wrap {
+        inherit pkgs;
+        environment.FONTCONFIG_FILE = "${fontsConf}";
+        font = {
+          name = "FiraMono Nerd Font Mono";
+          size = 11;
+        };
+        settings = {
+          scrollbar = "never";
+          pixel_scroll = false;
+          window_padding_width = 0;
+          confirm_os_window_close = 0;
+          enable_audio_bell = false;
+          cursor_trail = 0;
+          # cursor_trail = 1;
+          # cursor_trail_start_threshold = 1;
+          cursor_shape = "beam";
+          allow_remote_control = true;
+        };
+        keybindings."ctrl+backspace" = "send_text all \\x17";
+        # themeFile = "NightLion_v1";
+      };
+  };
 }
