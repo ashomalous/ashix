@@ -2,6 +2,7 @@
   den.aspects.persist.nixos = _: {
     # minimal defaults
     persist = {
+      enable = true;
       directories = [
         "/etc/nixos"
         {
@@ -24,12 +25,16 @@
 
         ".cache" # keep .cache off tmpfs to avoid high RAM usage
         "tmp"
+
+        "persist"
       ];
     };
   };
 
   den.default.nixos = { config, lib, ... }: {
     options.persist = {
+      enable = lib.mkEnableOption "persistence";
+
       dirName = lib.mkOption {
         type = lib.types.singleLineStr;
         default = "persist";

@@ -4,9 +4,7 @@
       # terminal multiplexer
       zellij
 
-      # version control
-      git
-      gh
+      development
 
       # monitoring
       btop

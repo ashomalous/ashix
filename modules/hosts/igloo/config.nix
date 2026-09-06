@@ -1,22 +1,76 @@
 { den, ... }: {
   den.aspects.igloo = {
     includes = with den.aspects; [
-      (disk-with-persistence "/dev/nvme0n1")
+      (disk-with-persistence "/dev/nvme0n1" "16G")
+      intelDrivers
+      (stateVersion "25.05")
 
-      system-desktop
-      # system-cli
+      nixos-cli
+
       systemd-boot
-      # quietBoot
+
+      printing
+
+      zen-browser
+      office
+
+      brightness
+
+      pipewire
+
       bluetooth
 
-      niri
+      localsend
+
       mangowc
-      # dank-material-shell
-      ly
+      waybar
+      kitty
+      yazi
+      mako
+
+      ssh
+      firmware
+      cli-tools
+      comma
+
+      shell
+
+      power-management
+      networking
+      fonts
+      locale
+      git
+
+      nix-settings
+
+      obsidian
+
+      # quickshell
+      # pass
+      # blender
+
+      # dunst
+      # rofi
+
+      # kanata
+
+      media
+
+      # recording
+      # office
+
+      # development
 
       gaming
+      minecraft
+      discord
 
-      # flatpak
+      bibataCursors
+      catppuccinGtk
+
+      deluge
+
+      projects
 
       ashomaly
     ];

@@ -1,7 +1,6 @@
 {
   den.aspects.temporary = { user, ... }: {
     nixos = { config, lib, ... }: {
-      # temporary.user.directories.".config" = {};
       systemd.tmpfiles.settings.tmp-user-dirs = lib.mkMerge (
         map (dir: {
           "/home/${user.name}/${dir}".d = {
