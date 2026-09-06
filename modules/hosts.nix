@@ -4,7 +4,7 @@
       minimal.users.ashomaly = { };
 
       igloo.users.ashomaly = { };
-      iceberg.users.ashomaly = { };
+      icicle.users.ashomaly = { };
     };
   };
 }
