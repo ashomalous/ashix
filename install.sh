@@ -28,7 +28,7 @@ nixos-generate-config --root /mnt --no-filesystems
 
 nixos-install --flake .#minimal
 
-for _ in {1..5}; do
+for _ in {1..3}; do
   echo "setting user password..."
   read -sp "user password: " password
   printf "\n"
@@ -38,7 +38,7 @@ for _ in {1..5}; do
   if [ $password != $password2 ]; then
     echo "your passwords do not match. try again"
   else
-    # mkpasswd -m yescrypt > /mnt/persist/passwd
+    mkpasswd $password -m yescrypt > /mnt/persist/passwd
     echo "user password set!"
     echo "install done! please check manually in the /mnt folder for possible errors before reboot"
     exit 0
