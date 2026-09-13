@@ -1,12 +1,11 @@
 { den, ... }: {
   den.aspects.mangowc = {
-    includes = with den.aspects; [ grim foot ];
+    includes = with den.aspects; [ grim foot clipboard ];
     nixos = { pkgs, ... }: {
       programs.mangowc.enable = true;
 
       environment.systemPackages = with pkgs; [
         wmenu
-        wl-clipboard
         slurp
         swaybg
       ];
