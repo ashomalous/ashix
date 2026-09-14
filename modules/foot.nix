@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  den.aspects.foot.nixos = {self', ...}: {
+  den.aspects.foot.nixos = { self', ... }: {
     programs.foot.enable = true;
     programs.foot.package = self'.packages.foot;
   };

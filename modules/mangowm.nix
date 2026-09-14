@@ -1,6 +1,10 @@
 { den, ... }: {
   den.aspects.mangowc = {
-    includes = with den.aspects; [ grim foot clipboard ];
+    includes = with den.aspects; [
+      grim
+      foot
+      clipboard
+    ];
     nixos = { pkgs, ... }: {
       programs.mangowc.enable = true;
 

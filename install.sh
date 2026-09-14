@@ -38,7 +38,7 @@ for _ in {1..3}; do
   if [ $password != $password2 ]; then
     echo "your passwords do not match. try again"
   else
-    mkpasswd $password -m yescrypt > /mnt/persist/passwd
+    mkpasswd $password -m yescrypt >/mnt/persist/passwd
     echo "user password set!"
     echo "install done! please check manually in the /mnt folder for possible errors before reboot"
     exit 0

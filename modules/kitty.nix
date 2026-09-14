@@ -1,6 +1,6 @@
 { inputs, ... }: {
   den.aspects.kitty.nixos =
-    {self', ...}: 
+    { self', ... }:
     {
       environment.systemPackages = with self'.packages; [ kitty ];
 

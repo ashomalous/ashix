@@ -4,7 +4,7 @@
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [ waybar ];
 
-      persist.user.directories = [".config/waybar"];
+      persist.user.directories = [ ".config/waybar" ];
     };
   };
 }
