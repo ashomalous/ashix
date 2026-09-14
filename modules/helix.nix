@@ -5,6 +5,8 @@
       {
         environment.systemPackages = with pkgs; [ helix ];
 
+        ashix.editor.helix.command = "hx";
+
         persist.user.directories = [ ".config/helix" ];
       };
 

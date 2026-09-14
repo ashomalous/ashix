@@ -12,5 +12,7 @@
     environment.variables = {
       PATH = [ "~/.config/emacs/bin" ];
     };
+
+    ashix.editor.emacs.command = "emacs";
   };
 }

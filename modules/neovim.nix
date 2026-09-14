@@ -12,5 +12,7 @@
       fd
       tree-sitter
     ];
+
+    ashix.editor.neovim.command = "nvim";
   };
 }
