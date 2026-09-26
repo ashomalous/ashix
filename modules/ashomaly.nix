@@ -9,7 +9,7 @@
       (set-xkb "us" "colemak" { })
     ];
 
-    nixos = _: {
+    nixos = {config, lib, ...}: lib.mkIf config.persist.enable {
       users.users.ashomaly.hashedPasswordFile = "/persist/passwd";
     };
   };

@@ -2,6 +2,7 @@
   den.aspects.persist.nixos = _: {
     # minimal defaults
     persist = {
+      enable = true;
       directories = [
         "/etc/nixos"
         {
@@ -32,6 +33,8 @@
 
   den.default.nixos = { config, lib, ... }: {
     options.persist = {
+      enable = lib.mkEnableOption "persistence";
+
       dirName = lib.mkOption {
         type = lib.types.singleLineStr;
         default = "persist";
